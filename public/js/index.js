@@ -11,7 +11,7 @@ var API = {
       headers: {
         "Content-Type": "application/json"
       },
-      type: "POST",
+      method: "POST",
       url: "api/examples",
       data: JSON.stringify(example)
     });
@@ -19,13 +19,19 @@ var API = {
   getExamples: function() {
     return $.ajax({
       url: "api/examples",
-      type: "GET"
+      method: "GET"
     });
   },
   deleteExample: function(id) {
     return $.ajax({
       url: "api/examples/" + id,
-      type: "DELETE"
+      method: "DELETE"
+    });
+  },
+  updateExample: function(id) {
+    return $.ajax({
+      url: "/api/examples" + id,
+      method: "PUT"
     });
   }
 };
